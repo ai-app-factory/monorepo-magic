@@ -1,0 +1,10 @@
+
+ NX   Failed to process project graph.
+
+An error occurred while processing files for the @nx/eslint/plugin plugin (Defined at nx.json#plugins[1])
+.
+  - apps/nuxt-mono/eslint.config.mjs: Cannot find package '@typescript-eslint/parser' imported from /home/sukrut/portfolio/projects/ai-app-factory/monorepo-magic/mo-mono/nuxt-mono/apps/nuxt-mono/eslint.config.mjs
+Did you mean to import "@typescript-eslint/parser/dist/index.js"?
+
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
