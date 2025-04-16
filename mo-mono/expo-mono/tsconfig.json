@@ -2,12 +2,5 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": [
-    {
-      "path": "./apps/expo-mono-e2e"
-    },
-    {
-      "path": "./apps/expo-mono"
-    }
-  ]
+  "references": []
 }

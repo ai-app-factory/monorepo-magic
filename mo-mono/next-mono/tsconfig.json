@@ -2,12 +2,5 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": [
-    {
-      "path": "./apps/next-mono-e2e"
-    },
-    {
-      "path": "./apps/next-mono"
-    }
-  ]
+  "references": []
 }

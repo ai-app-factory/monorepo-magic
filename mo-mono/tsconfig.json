@@ -2,5 +2,60 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./react-mono/apps/react-mono-e2e"
+    },
+    {
+      "path": "./expo-mono/apps/expo-mono-e2e"
+    },
+    {
+      "path": "./next-mono/apps/next-mono-e2e"
+    },
+    {
+      "path": "./nuxt-mono/apps/nuxt-mono-e2e"
+    },
+    {
+      "path": "./react-mono/apps/react-mono"
+    },
+    {
+      "path": "./vue-mono/apps/vue-mono-e2e"
+    },
+    {
+      "path": "./expo-mono/apps/expo-mono"
+    },
+    {
+      "path": "./next-mono/apps/next-mono"
+    },
+    {
+      "path": "./nuxt-mono/apps/nuxt-mono"
+    },
+    {
+      "path": "./rn-mono/apps/rn-mono-e2e"
+    },
+    {
+      "path": "./vue-mono/apps/vue-mono"
+    },
+    {
+      "path": "./rn-mono/apps/rn-mono"
+    },
+    {
+      "path": "./react-mono"
+    },
+    {
+      "path": "./expo-mono"
+    },
+    {
+      "path": "./next-mono"
+    },
+    {
+      "path": "./nuxt-mono"
+    },
+    {
+      "path": "./vue-mono"
+    },
+    {
+      "path": "./rn-mono"
+    }
+  ]
 }

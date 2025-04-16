@@ -2,12 +2,5 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": [
-    {
-      "path": "./apps/react-mono-e2e"
-    },
-    {
-      "path": "./apps/react-mono"
-    }
-  ]
+  "references": []
 }
