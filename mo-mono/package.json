@@ -6,6 +6,7 @@
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^10.0.1",
+    "@nx/angular": "20.8.0",
     "@nx/js": "20.8.0",
     "@nx/nest": "20.8.0",
     "@nx/next": "20.8.0",
