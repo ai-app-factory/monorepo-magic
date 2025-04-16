@@ -1,13 +1,15 @@
 packages:
-  - packages/*
-  - ng-mono/*
-  - nest-mono/*
-  - next-mono/*
-  - nuxt-mono/*
-  - react-mono/*
-  - svelte-mono/*
-  - vue-mono/*
-  - expo-mono/*
-  - rn-mono/*
+  - 'packages/*'
+  - 'ng-mono/*'
+  - 'nest-mono/*'
+  - 'next-mono/*'
+  - 'nuxt-mono/*'
+  - 'react-mono/*'
+  - 'svelte-mono/*'
+  - 'vue-mono/*'
+  - 'expo-mono/*'
+  - 'rn-mono/*'
+  - 'packages/common/*'
+  - 'packages/game-api/*'
 ignoredBuiltDependencies:
-  - nx
+  - 'nx'

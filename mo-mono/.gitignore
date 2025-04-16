@@ -44,3 +44,8 @@ Thumbs.db
 # Next.js
 .next
 out
+
+
+runtime-config.json
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
