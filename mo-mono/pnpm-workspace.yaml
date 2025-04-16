@@ -1,2 +1,6 @@
 packages: 
   - "packages/*"
+  - "ng-mono/*"
+  - "nest-mono/*"
+  - "next-mono/*"
+  - "nuxt-mono/*"
