@@ -1,6 +1,13 @@
-packages: 
-  - "packages/*"
-  - "ng-mono/*"
-  - "nest-mono/*"
-  - "next-mono/*"
-  - "nuxt-mono/*"
+packages:
+  - packages/*
+  - ng-mono/*
+  - nest-mono/*
+  - next-mono/*
+  - nuxt-mono/*
+  - react-mono/*
+  - svelte-mono/*
+  - vue-mono/*
+  - expo-mono/*
+  - rn-mono/*
+ignoredBuiltDependencies:
+  - nx
