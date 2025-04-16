@@ -1,6 +1,9 @@
 {
   "installation": {
-    "version": "20.8.0"
+    "version": "20.8.0",
+    "plugins": {
+      "@nx-go/nx-go": "3.3.1"
+    }
   },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "nxCloudId": "67ffab8811b85742a5528d0f"
