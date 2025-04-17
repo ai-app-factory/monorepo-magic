@@ -4,5 +4,6 @@ export type ApiUrl = string;
 export interface IRuntimeConfig {
   httpApis: {
     GameApi: ApiUrl;
+    StoryApi: ApiUrl;
   };
 }
