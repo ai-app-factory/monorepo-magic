@@ -11,7 +11,8 @@
         "compile",
         "test",
         "@dungeon-adventure/game-api-backend:build",
-        "dungeon_adventure.story_api:build"
+        "dungeon_adventure.story_api:build",
+        "@dungeon-adventure/game-ui:build"
       ]
     },
     "compile": {

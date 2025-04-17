@@ -1,0 +1,96 @@
+{
+  "name": "@dungeon-adventure/game-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/game-ui/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "dependsOn": ["lint", "compile", "bundle", "test"],
+      "options": {
+        "outputPath": "dist/packages/game-ui"
+      }
+    },
+    "bundle": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/game-ui/bundle"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "compile": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}/tsc"],
+      "options": {
+        "command": "tsc --build tsconfig.app.json",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "load:runtime-config": {
+      "executor": "nx:run-commands",
+      "metadata": {
+        "description": "Load runtime config from your deployed stack for dev purposes. You must set the AWS_REGION and CDK_APP_DIR env variables whilst calling i.e: AWS_REGION=ap-southeast-2 CDK_APP_DIR=./dist/packages/infra/cdk.out pnpm exec nx run @dungeon-adventure/game-ui:load:runtime-config"
+      },
+      "options": {
+        "command": "curl https://`aws cloudformation describe-stacks --query \"Stacks[?StackName=='dungeon-adventure-infra-sandbox'][].Outputs[?contains(OutputKey, 'DistributionDomainName')].OutputValue\" --output text`/runtime-config.json > './packages/game-ui/public/runtime-config.json'"
+      }
+    },
+    "preview": {
+      "dependsOn": ["build"],
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "@dungeon-adventure/game-ui:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "@dungeon-adventure/game-ui:build:development"
+        },
+        "production": {
+          "buildTarget": "@dungeon-adventure/game-ui:build:production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "@dungeon-adventure/game-ui:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "@dungeon-adventure/game-ui:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "@dungeon-adventure/game-ui:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "@dungeon-adventure/game-ui:build",
+        "spa": true
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/packages/game-ui"
+      }
+    }
+  }
+}

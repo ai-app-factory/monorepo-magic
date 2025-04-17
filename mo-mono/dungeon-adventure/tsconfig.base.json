@@ -35,6 +35,10 @@
       ":dungeon-adventure/game-api-schema": [
         "packages/game-api/schema/src/index.ts",
         "dist/packages/game-api/schema/src/index.d.ts"
+      ],
+      ":dungeon-adventure/game-ui": [
+        "packages/game-ui/src/index.ts",
+        "dist/packages/game-ui/src/index.d.ts"
       ]
     }
   }
