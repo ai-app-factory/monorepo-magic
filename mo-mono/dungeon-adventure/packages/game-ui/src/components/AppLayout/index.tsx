@@ -1,3 +1,4 @@
+import { useAuth } from 'react-oidc-context';
 import * as React from 'react';
 import { createContext, useCallback, useEffect, useState } from 'react';
 import { NavItems } from './navitems';
@@ -66,6 +67,7 @@ export const AppLayoutContext = createContext({
  * Defines the App layout and contains logic for routing.
  */
 const AppLayout: React.FC = () => {
+  const { user, removeUser, signoutRedirect, clearStaleState } = useAuth();
   const navigate = useNavigate();
   const appLayout = React.useRef<AppLayoutProps.Ref>(null);
   const [activeBreadcrumbs, setActiveBreadcrumbs] = useState<
@@ -73,7 +75,6 @@ const AppLayout: React.FC = () => {
   >([{ text: '/', href: '/' }]);
   const [appLayoutProps, setAppLayoutProps] = useState<AppLayoutProps>({});
   const { pathname, search } = useLocation();
-
   const setAppLayoutPropsSafe = useCallback(
     (props: AppLayoutProps) => {
       JSON.stringify(appLayoutProps) !== JSON.stringify(props) &&
@@ -81,7 +82,6 @@ const AppLayout: React.FC = () => {
     },
     [appLayoutProps],
   );
-
   useEffect(() => {
     const breadcrumbs = getBreadcrumbs(
       pathname,
@@ -90,9 +90,13 @@ const AppLayout: React.FC = () => {
     );
     setActiveBreadcrumbs(breadcrumbs);
   }, [pathname, search]);
-
   const onNavigate = useCallback(
-    (e: CustomEvent<{ href: string; external?: boolean }>) => {
+    (
+      e: CustomEvent<{
+        href: string;
+        external?: boolean;
+      }>,
+    ) => {
       if (!e.detail.external) {
         e.preventDefault();
         setAppLayoutPropsSafe({
@@ -103,7 +107,6 @@ const AppLayout: React.FC = () => {
     },
     [navigate, setAppLayoutPropsSafe],
   );
-
   return (
     <AppLayoutContext.Provider
       value={{
@@ -123,6 +126,27 @@ const AppLayout: React.FC = () => {
             src: Config.logo,
           },
         }}
+        utilities={[
+          {
+            type: 'menu-dropdown',
+            text: `${user?.profile?.['cognito:username']}`,
+            iconName: 'user-profile-active',
+            onItemClick: (e) => {
+              if (e.detail.id === 'signout') {
+                removeUser();
+                signoutRedirect({
+                  post_logout_redirect_uri: window.location.origin,
+                  extraQueryParams: {
+                    redirect_uri: window.location.origin,
+                    response_type: 'code',
+                  },
+                });
+                clearStaleState();
+              }
+            },
+            items: [{ id: 'signout', text: 'Sign out' }],
+          },
+        ]}
       />
       <CloudscapeAppLayout
         ref={appLayout}

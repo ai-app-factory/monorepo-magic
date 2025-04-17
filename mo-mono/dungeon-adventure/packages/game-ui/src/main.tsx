@@ -1,3 +1,5 @@
+import CognitoAuth from './components/CognitoAuth';
+import RuntimeConfigProvider from './components/RuntimeConfig';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { I18nProvider } from '@cloudscape-design/components/i18n';
@@ -21,7 +23,11 @@ root &&
   createRoot(root).render(
     <React.StrictMode>
       <I18nProvider locale="en" messages={[messages]}>
-        <RouterProvider router={router} />
+        <RuntimeConfigProvider>
+          <CognitoAuth>
+            <RouterProvider router={router} />
+          </CognitoAuth>
+        </RuntimeConfigProvider>
       </I18nProvider>
     </React.StrictMode>,
   );

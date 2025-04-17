@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@aws-cdk/aws-cognito-identitypool-alpha':
+        specifier: ^2.185.0-alpha.0
+        version: 2.185.0-alpha.0(aws-cdk-lib@2.189.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-lambda-powertools/logger':
         specifier: ^2.17.0
         version: 2.18.0
@@ -47,12 +50,18 @@ importers:
       constructs:
         specifier: ^10.4.2
         version: 10.4.2
+      oidc-client-ts:
+        specifier: ^3.2.0
+        version: 3.2.0
       react:
         specifier: 18.3.1
         version: 18.3.1
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
+      react-oidc-context:
+        specifier: ^3.2.0
+        version: 3.3.0(oidc-client-ts@3.2.0)(react@18.3.1)
       zod:
         specifier: ^3.24.2
         version: 3.24.3
@@ -214,6 +223,14 @@ packages:
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0':
     resolution: {integrity: sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A==}
+
+  '@aws-cdk/aws-cognito-identitypool-alpha@2.185.0-alpha.0':
+    resolution: {integrity: sha512-D/Q1kKVPFIWCcuZQc/dp+RgTdHK2Jg5yNNlEDa/Pg5/qq8660vqdb7OHQC5ac4z+d8fp0ihwvAv+HBA7tCHveA==}
+    engines: {node: '>= 14.15.0'}
+    deprecated: This package has been stabilized and moved to aws-cdk-lib
+    peerDependencies:
+      aws-cdk-lib: ^2.185.0
+      constructs: ^10.0.0
 
   '@aws-cdk/cloud-assembly-schema@41.2.0':
     resolution: {integrity: sha512-JaulVS6z9y5+u4jNmoWbHZRs9uGOnmn/ktXygNWKNu1k6lF3ad4so3s18eRu15XCbUIomxN9WPYT6Ehh7hzONw==}
@@ -4516,6 +4533,10 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
+  jwt-decode@4.0.0:
+    resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
+    engines: {node: '>=18'}
+
   keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
     engines: {node: '>= 0.6'}
@@ -4885,6 +4906,10 @@ packages:
   ohash@1.1.6:
     resolution: {integrity: sha512-TBu7PtV8YkAZn0tSxobKY2n2aAQva936lhRrj6957aDaCf9IEtqsKbgMzXE/F/sjqYOwmrukeORHNLe5glk7Cg==}
 
+  oidc-client-ts@3.2.0:
+    resolution: {integrity: sha512-wUvVcG3SXzZDKHxi/VGQGaTUk9qguMKfYh26Y1zOVrQsu1zp85JWx/SjZzKSXK5j3NA1RcasgMoaHe6gt1WNtw==}
+    engines: {node: '>=18'}
+
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -5149,6 +5174,13 @@ packages:
     resolution: {integrity: sha512-6yBLVO6suN8c/OcJk1mzIrUHdeEzf5rtRVBhxEXAHO49D7SlJ70cG4xrSJrBIAG7MMeQ+H/T151mM2dRDNnFaA==}
     peerDependencies:
       react: '>=15.0.0'
+
+  react-oidc-context@3.3.0:
+    resolution: {integrity: sha512-302T/ma4AOVAxrHdYctDSKXjCq9KNHT564XEO2yOPxRfxEP58xa4nz+GQinNl8x7CnEXECSM5JEjQJk3Cr5BvA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      oidc-client-ts: ^3.1.0
+      react: '>=16.14.0'
 
   react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
@@ -6130,6 +6162,11 @@ snapshots:
   '@aws-cdk/asset-awscli-v1@2.2.232': {}
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0': {}
+
+  '@aws-cdk/aws-cognito-identitypool-alpha@2.185.0-alpha.0(aws-cdk-lib@2.189.1(constructs@10.4.2))(constructs@10.4.2)':
+    dependencies:
+      aws-cdk-lib: 2.189.1(constructs@10.4.2)
+      constructs: 10.4.2
 
   '@aws-cdk/cloud-assembly-schema@41.2.0': {}
 
@@ -11898,6 +11935,8 @@ snapshots:
       object.assign: 4.1.7
       object.values: 1.2.1
 
+  jwt-decode@4.0.0: {}
+
   keygrip@1.1.0:
     dependencies:
       tsscmp: 1.0.6
@@ -12324,6 +12363,10 @@ snapshots:
 
   ohash@1.1.6: {}
 
+  oidc-client-ts@3.2.0:
+    dependencies:
+      jwt-decode: 4.0.0
+
   on-finished@2.4.1:
     dependencies:
       ee-first: 1.1.1
@@ -12573,6 +12616,11 @@ snapshots:
     dependencies:
       react: 18.3.1
       react-is: 18.3.1
+
+  react-oidc-context@3.3.0(oidc-client-ts@3.2.0)(react@18.3.1):
+    dependencies:
+      oidc-client-ts: 3.2.0
+      react: 18.3.1
 
   react-refresh@0.17.0: {}
 

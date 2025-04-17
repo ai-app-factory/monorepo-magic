@@ -50,6 +50,7 @@
     "vitest": "^3.0.0"
   },
   "dependencies": {
+    "@aws-cdk/aws-cognito-identitypool-alpha": "^2.185.0-alpha.0",
     "@aws-lambda-powertools/logger": "^2.17.0",
     "@aws-lambda-powertools/metrics": "^2.17.0",
     "@aws-lambda-powertools/tracer": "^2.17.0",
@@ -63,8 +64,10 @@
     "aws-xray-sdk-core": "^3.10.3",
     "aws4fetch": "^1.0.20",
     "constructs": "^10.4.2",
+    "oidc-client-ts": "^3.2.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-oidc-context": "^3.2.0",
     "zod": "^3.24.2"
   },
   "type": "module"
