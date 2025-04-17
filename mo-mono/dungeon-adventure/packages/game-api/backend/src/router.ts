@@ -21,8 +21,6 @@ export const appRouter = router({
     query: queryGames,
     save: saveGame,
   }),
-
-
 });
 
 export const handler = awsLambdaRequestHandler({

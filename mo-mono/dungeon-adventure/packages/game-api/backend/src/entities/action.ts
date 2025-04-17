@@ -29,4 +29,4 @@ export const createActionEntity = (client?: DynamoDBClient) =>
       },
     },
     { client, table: process.env.TABLE_NAME },
-);
+  );
