@@ -1,5 +1,6 @@
 import { initTRPC } from '@trpc/server';
 import {
+  createDynamoDBPlugin,
   createErrorPlugin,
   createLoggerPlugin,
   createMetricsPlugin,
