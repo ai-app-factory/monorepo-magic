@@ -1,3 +1,4 @@
+import TrpcClientProviders from './components/TrpcClients';
 import StoryApiProvider from './components/StoryApiProvider';
 import QueryClientProvider from './components/QueryClientProvider';
 import CognitoAuth from './components/CognitoAuth';
@@ -29,7 +30,9 @@ root &&
           <CognitoAuth>
             <QueryClientProvider>
               <StoryApiProvider>
-                <RouterProvider router={router} />
+                <TrpcClientProviders>
+                  <RouterProvider router={router} />
+                </TrpcClientProviders>
               </StoryApiProvider>
             </QueryClientProvider>
           </CognitoAuth>
