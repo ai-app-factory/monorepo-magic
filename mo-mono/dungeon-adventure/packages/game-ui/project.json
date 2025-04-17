@@ -25,7 +25,8 @@
         "production": {
           "mode": "production"
         }
-      }
+      },
+      "dependsOn": ["generate:story-api-client"]
     },
     "compile": {
       "executor": "nx:run-commands",
@@ -33,7 +34,24 @@
       "options": {
         "command": "tsc --build tsconfig.app.json",
         "cwd": "{projectRoot}"
-      }
+      },
+      "dependsOn": ["generate:story-api-client"]
+    },
+    "generate:story-api-client": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": [
+        {
+          "dependentTasksOutputFiles": "**/*.json"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/packages/game-ui/src/generated/story-api"],
+      "options": {
+        "commands": [
+          "nx g @aws/nx-plugin:open-api#ts-hooks --openApiSpecPath=\"dist/packages/story_api/openapi/openapi.json\" --outputPath=\"packages/game-ui/src/generated/story-api\" --no-interactive"
+        ]
+      },
+      "dependsOn": ["dungeon_adventure.story_api:openapi"]
     },
     "load:runtime-config": {
       "executor": "nx:run-commands",

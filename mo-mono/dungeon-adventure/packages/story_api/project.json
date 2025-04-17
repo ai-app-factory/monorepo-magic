@@ -9,13 +9,17 @@
     }
   },
   "tags": [],
+  "metadata": {
+    "apiName": "StoryApi",
+    "apiType": "fast-api"
+  },
   "targets": {
     "add": {
       "executor": "@nxlv/python:add",
       "options": {}
     },
     "build": {
-      "dependsOn": ["lint", "compile", "test", "bundle"],
+      "dependsOn": ["lint", "compile", "test", "bundle", "openapi"],
       "options": {
         "outputPath": "{workspaceRoot}/dist/packages/story_api"
       }
@@ -75,6 +79,16 @@
         "update": false
       }
     },
+    "openapi": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/packages/story_api/openapi"],
+      "options": {
+        "commands": [
+          "uv run python packages/story_api/scripts/generate_open_api.py \"dist/packages/story_api/openapi/openapi.json\""
+        ]
+      }
+    },
     "remove": {
       "executor": "@nxlv/python:remove",
       "options": {}
@@ -106,9 +120,5 @@
       "executor": "@nxlv/python:update",
       "options": {}
     }
-  },
-  "metadata": {
-    "apiName": "StoryApi",
-    "apiType": "fast-api"
   }
 }

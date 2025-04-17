@@ -1,3 +1,5 @@
+import StoryApiProvider from './components/StoryApiProvider';
+import QueryClientProvider from './components/QueryClientProvider';
 import CognitoAuth from './components/CognitoAuth';
 import RuntimeConfigProvider from './components/RuntimeConfig';
 import React from 'react';
@@ -25,7 +27,11 @@ root &&
       <I18nProvider locale="en" messages={[messages]}>
         <RuntimeConfigProvider>
           <CognitoAuth>
-            <RouterProvider router={router} />
+            <QueryClientProvider>
+              <StoryApiProvider>
+                <RouterProvider router={router} />
+              </StoryApiProvider>
+            </QueryClientProvider>
           </CognitoAuth>
         </RuntimeConfigProvider>
       </I18nProvider>
