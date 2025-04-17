@@ -39,6 +39,10 @@
       ":dungeon-adventure/game-ui": [
         "packages/game-ui/src/index.ts",
         "dist/packages/game-ui/src/index.d.ts"
+      ],
+      ":dungeon-adventure/infra": [
+        "packages/infra/src/index.ts",
+        "dist/packages/infra/src/index.d.ts"
       ]
     }
   }

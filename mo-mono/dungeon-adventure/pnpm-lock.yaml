@@ -29,6 +29,9 @@ importers:
       '@aws-sdk/credential-providers':
         specifier: ^3.775.0
         version: 3.787.0
+      '@cdklabs/cdk-validator-cfnguard':
+        specifier: ^0.0.60
+        version: 0.0.60(aws-cdk-lib@2.189.1(constructs@10.4.2))
       '@cloudscape-design/board-components':
         specifier: ^3.0.94
         version: 3.0.99(@cloudscape-design/components@3.0.947(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -53,6 +56,9 @@ importers:
       '@trpc/tanstack-react-query':
         specifier: 11.0.0
         version: 11.0.0(@tanstack/react-query@5.74.2(react@18.3.1))(@trpc/client@11.0.0(@trpc/server@11.0.0(typescript@5.7.3))(typescript@5.7.3))(@trpc/server@11.0.0(typescript@5.7.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)
+      aws-cdk:
+        specifier: ^2.1006.0
+        version: 2.1010.0
       aws-cdk-lib:
         specifier: ^2.185.0
         version: 2.189.1(constructs@10.4.2)
@@ -77,6 +83,9 @@ importers:
       react-oidc-context:
         specifier: ^3.2.0
         version: 3.3.0(oidc-client-ts@3.2.0)(react@18.3.1)
+      source-map-support:
+        specifier: ^0.5.21
+        version: 0.5.21
       zod:
         specifier: ^3.24.2
         version: 3.24.3
@@ -984,6 +993,12 @@ packages:
   '@bcoe/v8-coverage@1.0.2':
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
+
+  '@cdklabs/cdk-validator-cfnguard@0.0.60':
+    resolution: {integrity: sha512-FmKa+vuzB66n8lPWU4Bb6P/B4l6AdFVAKjlm3r09Aoh9Wk85jAn2daQQIdQW8iGzW2tS2SpXC4CuO/4tgHSKhQ==}
+    engines: {node: '>= 16.14.0'}
+    peerDependencies:
+      aws-cdk-lib: ^2.76.0
 
   '@cloudscape-design/board-components@3.0.99':
     resolution: {integrity: sha512-aLYvNAUaU8VYxkPoxXPXxaFtbPd3HNHD9bz1vqrk8GfD/kM2LaOBSoR2YcUW7ZwVX6313yqyyknGa+9yTxOaoA==}
@@ -3019,6 +3034,11 @@ packages:
       - yaml
       - mime-types
 
+  aws-cdk@2.1010.0:
+    resolution: {integrity: sha512-kYNzBXVUZoRrTuYxRRA2Loz/Uvay0MqHobg8KPZaWylIbw/meUDgtoATRNt+stOdJ9PHODTjWmlDKI+2/KoF+w==}
+    engines: {node: '>= 14.15.0'}
+    hasBin: true
+
   aws-xray-sdk-core@3.10.3:
     resolution: {integrity: sha512-bltsLAr4juMJJ2tT5/L/CtwUGIvHihtPe6SO/z3jjOD73PHhOYxcuwCMFFyTbTy5S4WThJO32oZk7r+pg3ZoCQ==}
     engines: {node: '>= 14.x'}
@@ -4056,6 +4076,11 @@ packages:
   fs-minipass@2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
     engines: {node: '>= 8'}
+
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -7424,6 +7449,10 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
+  '@cdklabs/cdk-validator-cfnguard@0.0.60(aws-cdk-lib@2.189.1(constructs@10.4.2))':
+    dependencies:
+      aws-cdk-lib: 2.189.1(constructs@10.4.2)
+
   '@cloudscape-design/board-components@3.0.99(@cloudscape-design/components@3.0.947(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@cloudscape-design/component-toolkit': 1.0.0-beta.94
@@ -10147,6 +10176,10 @@ snapshots:
       '@aws-cdk/cloud-assembly-schema': 41.2.0
       constructs: 10.4.2
 
+  aws-cdk@2.1010.0:
+    optionalDependencies:
+      fsevents: 2.3.2
+
   aws-xray-sdk-core@3.10.3:
     dependencies:
       '@aws-sdk/types': 3.775.0
@@ -11407,6 +11440,9 @@ snapshots:
   fs-minipass@2.1.0:
     dependencies:
       minipass: 3.3.6
+
+  fsevents@2.3.2:
+    optional: true
 
   fsevents@2.3.3:
     optional: true

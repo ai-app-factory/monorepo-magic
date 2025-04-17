@@ -17,6 +17,9 @@
     },
     {
       "path": "./packages/game-ui"
+    },
+    {
+      "path": "./packages/infra"
     }
   ]
 }
