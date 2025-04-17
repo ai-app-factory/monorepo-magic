@@ -4,3 +4,7 @@ packages:
   - "nest-mono/*"
   - "next-mono/*"
   - "nuxt-mono/*"
+  - "react-mono/*"
+  - "svelte-mono/*"
+  - "vue-mono/*"
+  - "libs/*"
