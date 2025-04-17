@@ -56,6 +56,9 @@
     },
     {
       "path": "./rn-mono"
+    },
+    {
+      "path": "./libs/atomic-design"
     }
   ]
 }
