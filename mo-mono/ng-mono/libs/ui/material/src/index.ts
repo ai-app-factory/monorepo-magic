@@ -21,3 +21,5 @@ export * from './lib/progress-indicator/progress-indicator.component';
 export * from './lib/stepper/stepper.component';
 
 export * from './lib/table/table.component';
+
+export * from './lib/snack-bar/snack-bar.component';
