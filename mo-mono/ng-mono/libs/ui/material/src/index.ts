@@ -41,3 +41,5 @@ export * from './lib/menu/menu.component';
 export * from './lib/slider/slider.component';
 
 export * from './lib/card/card.component';
+
+export * from './lib/auto-complete/auto-complete.component';
