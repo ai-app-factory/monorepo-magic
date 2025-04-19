@@ -39,3 +39,5 @@ export * from './lib/select/select.component';
 export * from './lib/menu/menu.component';
 
 export * from './lib/slider/slider.component';
+
+export * from './lib/card/card.component';
