@@ -17,3 +17,5 @@ export * from './lib/input/input.component';
 export * from './lib/list/list.component';
 
 export * from './lib/progress-indicator/progress-indicator.component';
+
+export * from './lib/stepper/stepper.component';
