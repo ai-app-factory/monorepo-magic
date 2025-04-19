@@ -13,3 +13,5 @@ export * from './lib/radio-button/radio-button.component';
 export * from './lib/chip/chip.component';
 
 export * from './lib/input/input.component';
+
+export * from './lib/list/list.component';
