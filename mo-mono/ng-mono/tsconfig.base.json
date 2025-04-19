@@ -14,10 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@ng-mono/clarity": ["libs/ui/clarity/src/index.ts"],
-      "@ng-mono/material": ["libs/ui/material/src/index.ts"]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
