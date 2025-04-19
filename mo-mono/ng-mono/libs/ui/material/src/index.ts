@@ -23,3 +23,5 @@ export * from './lib/stepper/stepper.component';
 export * from './lib/table/table.component';
 
 export * from './lib/snack-bar/snack-bar.component';
+
+export * from './lib/tree/tree.component';
