@@ -35,3 +35,5 @@ export * from './lib/slide-toggle/slide-toggle.component';
 export * from './lib/tool-tip/tool-tip.component';
 
 export * from './lib/tool-bar/tool-bar.component';
+
+export * from './lib/select/select.component';
