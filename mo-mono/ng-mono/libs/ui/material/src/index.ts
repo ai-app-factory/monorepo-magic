@@ -37,3 +37,5 @@ export * from './lib/tool-bar/tool-bar.component';
 export * from './lib/select/select.component';
 
 export * from './lib/menu/menu.component';
+
+export * from './lib/slider/slider.component';
