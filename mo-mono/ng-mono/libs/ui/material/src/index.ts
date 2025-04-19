@@ -31,3 +31,5 @@ export * from './lib/time-picker/time-picker.component';
 export * from './lib/date-picker/date-picker.component';
 
 export * from './lib/slide-toggle/slide-toggle.component';
+
+export * from './lib/tool-tip/tool-tip.component';
