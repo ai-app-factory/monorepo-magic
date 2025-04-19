@@ -11,3 +11,5 @@ export * from './lib/button-toggle/button-toggle.component';
 export * from './lib/radio-button/radio-button.component';
 
 export * from './lib/chip/chip.component';
+
+export * from './lib/input/input.component';
