@@ -3,12 +3,6 @@
   "include": [],
   "references": [
     {
-      "path": "../game-api/backend"
-    },
-    {
-      "path": "../common/types"
-    },
-    {
       "path": "./tsconfig.app.json"
     },
     {

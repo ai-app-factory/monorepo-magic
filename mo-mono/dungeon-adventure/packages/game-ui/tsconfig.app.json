@@ -35,12 +35,5 @@
     "eslint.config.mjs"
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
-  "references": [
-    {
-      "path": "../game-api/backend/tsconfig.lib.json"
-    },
-    {
-      "path": "../common/types/tsconfig.lib.json"
-    }
-  ]
+  "references": []
 }

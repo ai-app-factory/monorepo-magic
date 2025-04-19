@@ -59,6 +59,27 @@
     },
     {
       "path": "./libs/atomic-design"
+    },
+    {
+      "path": "./dungeon-adventure/packages/common/constructs"
+    },
+    {
+      "path": "./dungeon-adventure/packages/game-api/backend"
+    },
+    {
+      "path": "./dungeon-adventure/packages/game-api/schema"
+    },
+    {
+      "path": "./dungeon-adventure/packages/common/types"
+    },
+    {
+      "path": "./dungeon-adventure/packages/game-ui"
+    },
+    {
+      "path": "./dungeon-adventure/packages/infra"
+    },
+    {
+      "path": "./dungeon-adventure"
     }
   ]
 }
