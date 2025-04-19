@@ -15,3 +15,5 @@ export * from './lib/chip/chip.component';
 export * from './lib/input/input.component';
 
 export * from './lib/list/list.component';
+
+export * from './lib/progress-indicator/progress-indicator.component';
