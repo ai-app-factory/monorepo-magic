@@ -29,3 +29,5 @@ export * from './lib/tree/tree.component';
 export * from './lib/tabs/tabs.component';
 
 export * from './lib/time-picker/time-picker.component';
+
+export * from './lib/date-picker/date-picker.component';
